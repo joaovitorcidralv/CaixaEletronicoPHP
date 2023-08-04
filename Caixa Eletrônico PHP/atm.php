@@ -14,6 +14,7 @@
 </head>
 <body>
     <?php
+        //obtendo valor do formulário
         $saque = $_REQUEST['saque'] ?? 0;
     ?>
     <main>
@@ -31,12 +32,15 @@
         //saque de 100
         $tot100 = floor($resto / 100);
         $resto %= 100;
+
         //saque de 50
         $tot50 = floor($resto / 50);
         $resto %= 50;
+
         //saque de 10
         $tot10 = floor($resto / 10);
         $resto %= 10;
+
         //saque de 5
         $tot5 = floor($resto / 5);
         $resto %= 5;
@@ -45,6 +49,7 @@
         <h2>Saque de <?=number_format($saque,2,",",".")?> realizado</h2>
         <p>O caixa eletrônico vai te entregar as seguintes notas:</p>
         <ul>
+            //utlizando imagens
             <li><img src="imagens/100-reais.jpg" alt="Nota de 100" class="nota"> x<?=$tot100?></li>
             <li><img src="imagens/50-reais.jpg" alt="Nota de 50" class="nota"> x<?=$tot50?></li>
             <li><img src="imagens/10-reais.jpg" alt="Nota de 10" class="nota"> x<?=$tot10?></li>
